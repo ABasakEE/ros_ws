@@ -1,0 +1,5 @@
+sensor_msgs/Image img
+---
+int64 step
+int32[] ids
+float32[] corners

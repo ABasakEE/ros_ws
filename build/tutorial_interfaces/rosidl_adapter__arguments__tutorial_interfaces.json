@@ -1,0 +1,9 @@
+{
+  "package_name": "tutorial_interfaces",
+  "non_idl_tuples": [
+    "/home/arjoe/ros_ws/src/tutorial_interfaces:msg/Num.msg",
+    "/home/arjoe/ros_ws/src/tutorial_interfaces:msg/Sphere.msg",
+    "/home/arjoe/ros_ws/src/tutorial_interfaces:srv/AddThreeInts.srv",
+    "/home/arjoe/ros_ws/src/tutorial_interfaces:srv/CVImg.srv"
+  ]
+}

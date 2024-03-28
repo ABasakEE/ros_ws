@@ -1,0 +1,10 @@
+[console_scripts]
+aruco_client = py_srvcli.aruco_client:main
+aruco_service = py_srvcli.aruco_service:main
+client = py_srvcli.client:main
+client3 = py_srvcli.client_three:main
+publisher = py_srvcli.publisher:main
+server = py_srvcli.service:main
+server3 = py_srvcli.server_three:main
+subscriber = py_srvcli.subscriber:main
+

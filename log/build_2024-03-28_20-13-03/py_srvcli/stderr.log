@@ -1,0 +1,5 @@
+  File "/home/arjoe/ros_ws/install/py_srvcli/lib/python3.10/site-packages/py_srvcli/aruco_client.py", line 58
+    minimal_client.get_logger().info()'Service call failed %r' % (e,))
+                                                                     ^
+SyntaxError: unmatched ')'
+

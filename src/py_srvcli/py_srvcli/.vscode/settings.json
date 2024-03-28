@@ -1,0 +1,36 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/arjoe/ros_ws/install/py_srvcli/lib/python3.10/site-packages",
+        "/home/arjoe/ros_ws/install/tutorial_interfaces/local/lib/python3.10/dist-packages",
+        "/home/arjoe/erc_ws/build/week1_tutorials",
+        "/home/arjoe/erc_ws/install/week1_tutorials/lib/python3.10/site-packages",
+        "/home/arjoe/erc_ws/build/week0_tutorials",
+        "/home/arjoe/erc_ws/install/week0_tutorials/lib/python3.10/site-packages",
+        "/home/arjoe/erc_ws/build/task1",
+        "/home/arjoe/erc_ws/install/task1/lib/python3.10/site-packages",
+        "/home/arjoe/erc_ws/build/sherlock",
+        "/home/arjoe/erc_ws/install/sherlock/lib/python3.10/site-packages",
+        "/home/arjoe/erc_ws/build/mrs_hudson",
+        "/home/arjoe/erc_ws/install/mrs_hudson/lib/python3.10/site-packages",
+        "/home/arjoe/erc_ws/src/week1_tutorials/install/week1_tutorials/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/arjoe/ros_ws/install/py_srvcli/lib/python3.10/site-packages",
+        "/home/arjoe/ros_ws/install/tutorial_interfaces/local/lib/python3.10/dist-packages",
+        "/home/arjoe/erc_ws/build/week1_tutorials",
+        "/home/arjoe/erc_ws/install/week1_tutorials/lib/python3.10/site-packages",
+        "/home/arjoe/erc_ws/build/week0_tutorials",
+        "/home/arjoe/erc_ws/install/week0_tutorials/lib/python3.10/site-packages",
+        "/home/arjoe/erc_ws/build/task1",
+        "/home/arjoe/erc_ws/install/task1/lib/python3.10/site-packages",
+        "/home/arjoe/erc_ws/build/sherlock",
+        "/home/arjoe/erc_ws/install/sherlock/lib/python3.10/site-packages",
+        "/home/arjoe/erc_ws/build/mrs_hudson",
+        "/home/arjoe/erc_ws/install/mrs_hudson/lib/python3.10/site-packages",
+        "/home/arjoe/erc_ws/src/week1_tutorials/install/week1_tutorials/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
