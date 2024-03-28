@@ -1,2 +1,1 @@
-# ros_ws
-# ros_ws
+The following code uses the popular OpenCV library to detect Aruco markers from a video. The frames of the video are accessed from a ROS2 Client Node, which sends the images to a ROS2 Service Node. The images are converted to a ROS2 compatible format using the cv_bridge() library. Then, the server detects the Aruco markers and returns the ids and the bounding boxes in the form of an array. This data can then be further used for other objectives.
