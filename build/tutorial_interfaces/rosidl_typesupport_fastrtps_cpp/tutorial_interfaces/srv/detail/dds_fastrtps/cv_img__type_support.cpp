@@ -281,8 +281,6 @@ cdr_serialize(
   const tutorial_interfaces::srv::CVImg_Response & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: step
-  cdr << ros_message.step;
   // Member: ids
   {
     cdr << ros_message.ids;
@@ -300,9 +298,6 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   tutorial_interfaces::srv::CVImg_Response & ros_message)
 {
-  // Member: step
-  cdr >> ros_message.step;
-
   // Member: ids
   {
     cdr >> ros_message.ids;
@@ -329,12 +324,6 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
-  // Member: step
-  {
-    size_t item_size = sizeof(ros_message.step);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // Member: ids
   {
     size_t array_size = ros_message.ids.size();
@@ -379,15 +368,6 @@ max_serialized_size_CVImg_Response(
   is_plain = true;
 
 
-  // Member: step
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint64_t);
-    current_alignment += array_size * sizeof(uint64_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
-  }
-
   // Member: ids
   {
     size_t array_size = 0;
@@ -396,9 +376,9 @@ max_serialized_size_CVImg_Response(
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
 
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
   // Member: corners

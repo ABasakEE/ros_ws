@@ -82,29 +82,13 @@ private:
 class Init_CVImg_Response_ids
 {
 public:
-  explicit Init_CVImg_Response_ids(::tutorial_interfaces::srv::CVImg_Response & msg)
-  : msg_(msg)
+  Init_CVImg_Response_ids()
+  : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
   Init_CVImg_Response_corners ids(::tutorial_interfaces::srv::CVImg_Response::_ids_type arg)
   {
     msg_.ids = std::move(arg);
     return Init_CVImg_Response_corners(msg_);
-  }
-
-private:
-  ::tutorial_interfaces::srv::CVImg_Response msg_;
-};
-
-class Init_CVImg_Response_step
-{
-public:
-  Init_CVImg_Response_step()
-  : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
-  {}
-  Init_CVImg_Response_ids step(::tutorial_interfaces::srv::CVImg_Response::_step_type arg)
-  {
-    msg_.step = std::move(arg);
-    return Init_CVImg_Response_ids(msg_);
   }
 
 private:
@@ -122,7 +106,7 @@ template<>
 inline
 auto build<::tutorial_interfaces::srv::CVImg_Response>()
 {
-  return tutorial_interfaces::srv::builder::Init_CVImg_Response_step();
+  return tutorial_interfaces::srv::builder::Init_CVImg_Response_ids();
 }
 
 }  // namespace tutorial_interfaces

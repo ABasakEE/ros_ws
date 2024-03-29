@@ -135,56 +135,56 @@ void tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_
 size_t tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__size_function__CVImg_Response__ids(
   const void * untyped_member)
 {
-  const rosidl_runtime_c__float__Sequence * member =
-    (const rosidl_runtime_c__float__Sequence *)(untyped_member);
+  const rosidl_runtime_c__int64__Sequence * member =
+    (const rosidl_runtime_c__int64__Sequence *)(untyped_member);
   return member->size;
 }
 
 const void * tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__get_const_function__CVImg_Response__ids(
   const void * untyped_member, size_t index)
 {
-  const rosidl_runtime_c__float__Sequence * member =
-    (const rosidl_runtime_c__float__Sequence *)(untyped_member);
+  const rosidl_runtime_c__int64__Sequence * member =
+    (const rosidl_runtime_c__int64__Sequence *)(untyped_member);
   return &member->data[index];
 }
 
 void * tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__get_function__CVImg_Response__ids(
   void * untyped_member, size_t index)
 {
-  rosidl_runtime_c__float__Sequence * member =
-    (rosidl_runtime_c__float__Sequence *)(untyped_member);
+  rosidl_runtime_c__int64__Sequence * member =
+    (rosidl_runtime_c__int64__Sequence *)(untyped_member);
   return &member->data[index];
 }
 
 void tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__fetch_function__CVImg_Response__ids(
   const void * untyped_member, size_t index, void * untyped_value)
 {
-  const float * item =
-    ((const float *)
+  const int64_t * item =
+    ((const int64_t *)
     tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__get_const_function__CVImg_Response__ids(untyped_member, index));
-  float * value =
-    (float *)(untyped_value);
+  int64_t * value =
+    (int64_t *)(untyped_value);
   *value = *item;
 }
 
 void tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__assign_function__CVImg_Response__ids(
   void * untyped_member, size_t index, const void * untyped_value)
 {
-  float * item =
-    ((float *)
+  int64_t * item =
+    ((int64_t *)
     tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__get_function__CVImg_Response__ids(untyped_member, index));
-  const float * value =
-    (const float *)(untyped_value);
+  const int64_t * value =
+    (const int64_t *)(untyped_value);
   *item = *value;
 }
 
 bool tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__resize_function__CVImg_Response__ids(
   void * untyped_member, size_t size)
 {
-  rosidl_runtime_c__float__Sequence * member =
-    (rosidl_runtime_c__float__Sequence *)(untyped_member);
-  rosidl_runtime_c__float__Sequence__fini(member);
-  return rosidl_runtime_c__float__Sequence__init(member, size);
+  rosidl_runtime_c__int64__Sequence * member =
+    (rosidl_runtime_c__int64__Sequence *)(untyped_member);
+  rosidl_runtime_c__int64__Sequence__fini(member);
+  return rosidl_runtime_c__int64__Sequence__init(member, size);
 }
 
 size_t tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__size_function__CVImg_Response__corners(
@@ -242,27 +242,10 @@ bool tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_
   return rosidl_runtime_c__float__Sequence__init(member, size);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__CVImg_Response_message_member_array[3] = {
-  {
-    "step",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT64,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(tutorial_interfaces__srv__CVImg_Response, step),  // bytes offset in struct
-    NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
+static rosidl_typesupport_introspection_c__MessageMember tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__CVImg_Response_message_member_array[2] = {
   {
     "ids",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_INT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     true,  // is array
@@ -299,7 +282,7 @@ static rosidl_typesupport_introspection_c__MessageMember tutorial_interfaces__sr
 static const rosidl_typesupport_introspection_c__MessageMembers tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__CVImg_Response_message_members = {
   "tutorial_interfaces__srv",  // message namespace
   "CVImg_Response",  // message name
-  3,  // number of fields
+  2,  // number of fields
   sizeof(tutorial_interfaces__srv__CVImg_Response),
   tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__CVImg_Response_message_member_array,  // message members
   tutorial_interfaces__srv__CVImg_Response__rosidl_typesupport_introspection_c__CVImg_Response_init_function,  // function to initialize message memory (memory has to be allocated)

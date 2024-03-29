@@ -146,43 +146,26 @@ struct CVImg_Response_
 
   explicit CVImg_Response_(rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
   {
-    if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
-      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
-    {
-      this->step = 0ll;
-    }
+    (void)_init;
   }
 
   explicit CVImg_Response_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
   {
+    (void)_init;
     (void)_alloc;
-    if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
-      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
-    {
-      this->step = 0ll;
-    }
   }
 
   // field types and members
-  using _step_type =
-    int64_t;
-  _step_type step;
   using _ids_type =
-    std::vector<float, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<float>>;
+    std::vector<int64_t, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<int64_t>>;
   _ids_type ids;
   using _corners_type =
     std::vector<float, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<float>>;
   _corners_type corners;
 
   // setters for named parameter idiom
-  Type & set__step(
-    const int64_t & _arg)
-  {
-    this->step = _arg;
-    return *this;
-  }
   Type & set__ids(
-    const std::vector<float, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<float>> & _arg)
+    const std::vector<int64_t, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<int64_t>> & _arg)
   {
     this->ids = _arg;
     return *this;
@@ -236,9 +219,6 @@ struct CVImg_Response_
   // comparison operators
   bool operator==(const CVImg_Response_ & other) const
   {
-    if (this->step != other.step) {
-      return false;
-    }
     if (this->ids != other.ids) {
       return false;
     }

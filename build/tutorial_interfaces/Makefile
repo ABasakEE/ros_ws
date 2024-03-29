@@ -315,17 +315,17 @@ tutorial_interfaces__rosidl_typesupport_cpp/fast:
 .PHONY : tutorial_interfaces__rosidl_typesupport_cpp/fast
 
 #=============================================================================
-# Target rules for targets named ament_cmake_python_symlink_tutorial_interfaces
+# Target rules for targets named ament_cmake_python_copy_tutorial_interfaces
 
 # Build rule for target.
-ament_cmake_python_symlink_tutorial_interfaces: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_symlink_tutorial_interfaces
-.PHONY : ament_cmake_python_symlink_tutorial_interfaces
+ament_cmake_python_copy_tutorial_interfaces: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_tutorial_interfaces
+.PHONY : ament_cmake_python_copy_tutorial_interfaces
 
 # fast build rule for target.
-ament_cmake_python_symlink_tutorial_interfaces/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_tutorial_interfaces.dir/build.make CMakeFiles/ament_cmake_python_symlink_tutorial_interfaces.dir/build
-.PHONY : ament_cmake_python_symlink_tutorial_interfaces/fast
+ament_cmake_python_copy_tutorial_interfaces/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_tutorial_interfaces.dir/build.make CMakeFiles/ament_cmake_python_copy_tutorial_interfaces.dir/build
+.PHONY : ament_cmake_python_copy_tutorial_interfaces/fast
 
 #=============================================================================
 # Target rules for targets named ament_cmake_python_build_tutorial_interfaces_egg
@@ -1259,7 +1259,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... ament_cmake_python_build_tutorial_interfaces_egg"
-	@echo "... ament_cmake_python_symlink_tutorial_interfaces"
+	@echo "... ament_cmake_python_copy_tutorial_interfaces"
 	@echo "... tutorial_interfaces"
 	@echo "... tutorial_interfaces__cpp"
 	@echo "... tutorial_interfaces__py"

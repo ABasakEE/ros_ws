@@ -48,8 +48,7 @@ typedef struct tutorial_interfaces__srv__CVImg_Request__Sequence
 /// Struct defined in srv/CVImg in the package tutorial_interfaces.
 typedef struct tutorial_interfaces__srv__CVImg_Response
 {
-  int64_t step;
-  rosidl_runtime_c__float__Sequence ids;
+  rosidl_runtime_c__int64__Sequence ids;
   rosidl_runtime_c__float__Sequence corners;
 } tutorial_interfaces__srv__CVImg_Response;
 

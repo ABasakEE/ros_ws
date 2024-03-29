@@ -287,11 +287,6 @@ static bool _CVImg_Response__cdr_serialize(
     return false;
   }
   const _CVImg_Response__ros_msg_type * ros_message = static_cast<const _CVImg_Response__ros_msg_type *>(untyped_ros_message);
-  // Field name: step
-  {
-    cdr << ros_message->step;
-  }
-
   // Field name: ids
   {
     size_t size = ros_message->ids.size;
@@ -320,20 +315,15 @@ static bool _CVImg_Response__cdr_deserialize(
     return false;
   }
   _CVImg_Response__ros_msg_type * ros_message = static_cast<_CVImg_Response__ros_msg_type *>(untyped_ros_message);
-  // Field name: step
-  {
-    cdr >> ros_message->step;
-  }
-
   // Field name: ids
   {
     uint32_t cdrSize;
     cdr >> cdrSize;
     size_t size = static_cast<size_t>(cdrSize);
     if (ros_message->ids.data) {
-      rosidl_runtime_c__float__Sequence__fini(&ros_message->ids);
+      rosidl_runtime_c__int64__Sequence__fini(&ros_message->ids);
     }
-    if (!rosidl_runtime_c__float__Sequence__init(&ros_message->ids, size)) {
+    if (!rosidl_runtime_c__int64__Sequence__init(&ros_message->ids, size)) {
       fprintf(stderr, "failed to create array for field 'ids'");
       return false;
     }
@@ -374,12 +364,6 @@ size_t get_serialized_size_tutorial_interfaces__srv__CVImg_Response(
   (void)padding;
   (void)wchar_size;
 
-  // field.name step
-  {
-    size_t item_size = sizeof(ros_message->step);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // field.name ids
   {
     size_t array_size = ros_message->ids.size;
@@ -431,14 +415,6 @@ size_t max_serialized_size_tutorial_interfaces__srv__CVImg_Response(
   full_bounded = true;
   is_plain = true;
 
-  // member: step
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint64_t);
-    current_alignment += array_size * sizeof(uint64_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
-  }
   // member: ids
   {
     size_t array_size = 0;
@@ -447,9 +423,9 @@ size_t max_serialized_size_tutorial_interfaces__srv__CVImg_Response(
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
 
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
   // member: corners
   {

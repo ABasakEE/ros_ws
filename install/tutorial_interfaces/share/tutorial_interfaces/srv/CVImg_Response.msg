@@ -1,4 +1,3 @@
 
-int64 step
-float32[] ids
+int64[] ids
 float32[] corners

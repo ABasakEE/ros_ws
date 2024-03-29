@@ -73,7 +73,7 @@ def main(args=None):
                     for id in response.ids:
                         print(id,end=' ')
                     print()
-                    #breaking into groups of 2 and 4
+                    #breaking into groups of 2 and step
                     print('Corners detected')
                     i,j=0,0
                     for corner in response.corners:

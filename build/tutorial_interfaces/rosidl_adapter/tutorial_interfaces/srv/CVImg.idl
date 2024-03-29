@@ -10,9 +10,7 @@ module tutorial_interfaces {
       sensor_msgs::msg::Image img;
     };
     struct CVImg_Response {
-      int64 step;
-
-      sequence<float> ids;
+      sequence<int64> ids;
 
       sequence<float> corners;
     };

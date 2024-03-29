@@ -157,15 +157,6 @@ bool tutorial_interfaces__srv__cv_img__response__convert_from_py(PyObject * _pym
     assert(strncmp("tutorial_interfaces.srv._cv_img.CVImg_Response", full_classname_dest, 46) == 0);
   }
   tutorial_interfaces__srv__CVImg_Response * ros_message = _ros_message;
-  {  // step
-    PyObject * field = PyObject_GetAttrString(_pymsg, "step");
-    if (!field) {
-      return false;
-    }
-    assert(PyLong_Check(field));
-    ros_message->step = PyLong_AsLongLong(field);
-    Py_DECREF(field);
-  }
   {  // ids
     PyObject * field = PyObject_GetAttrString(_pymsg, "ids");
     if (!field) {
@@ -179,14 +170,14 @@ bool tutorial_interfaces__srv__cv_img__response__convert_from_py(PyObject * _pym
         Py_DECREF(field);
         return false;
       }
-      Py_ssize_t size = view.len / sizeof(float);
-      if (!rosidl_runtime_c__float__Sequence__init(&(ros_message->ids), size)) {
-        PyErr_SetString(PyExc_RuntimeError, "unable to create float__Sequence ros_message");
+      Py_ssize_t size = view.len / sizeof(int64_t);
+      if (!rosidl_runtime_c__int64__Sequence__init(&(ros_message->ids), size)) {
+        PyErr_SetString(PyExc_RuntimeError, "unable to create int64__Sequence ros_message");
         PyBuffer_Release(&view);
         Py_DECREF(field);
         return false;
       }
-      float * dest = ros_message->ids.data;
+      int64_t * dest = ros_message->ids.data;
       rc = PyBuffer_ToContiguous(dest, &view, view.len, 'C');
       if (rc < 0) {
         PyBuffer_Release(&view);
@@ -206,13 +197,13 @@ bool tutorial_interfaces__srv__cv_img__response__convert_from_py(PyObject * _pym
         Py_DECREF(field);
         return false;
       }
-      if (!rosidl_runtime_c__float__Sequence__init(&(ros_message->ids), size)) {
-        PyErr_SetString(PyExc_RuntimeError, "unable to create float__Sequence ros_message");
+      if (!rosidl_runtime_c__int64__Sequence__init(&(ros_message->ids), size)) {
+        PyErr_SetString(PyExc_RuntimeError, "unable to create int64__Sequence ros_message");
         Py_DECREF(seq_field);
         Py_DECREF(field);
         return false;
       }
-      float * dest = ros_message->ids.data;
+      int64_t * dest = ros_message->ids.data;
       for (Py_ssize_t i = 0; i < size; ++i) {
         PyObject * item = PySequence_Fast_GET_ITEM(seq_field, i);
         if (!item) {
@@ -220,9 +211,9 @@ bool tutorial_interfaces__srv__cv_img__response__convert_from_py(PyObject * _pym
           Py_DECREF(field);
           return false;
         }
-        assert(PyFloat_Check(item));
-        float tmp = (float)PyFloat_AS_DOUBLE(item);
-        memcpy(&dest[i], &tmp, sizeof(float));
+        assert(PyLong_Check(item));
+        int64_t tmp = PyLong_AsLongLong(item);
+        memcpy(&dest[i], &tmp, sizeof(int64_t));
       }
       Py_DECREF(seq_field);
     }
@@ -312,17 +303,6 @@ PyObject * tutorial_interfaces__srv__cv_img__response__convert_to_py(void * raw_
     }
   }
   tutorial_interfaces__srv__CVImg_Response * ros_message = (tutorial_interfaces__srv__CVImg_Response *)raw_ros_message;
-  {  // step
-    PyObject * field = NULL;
-    field = PyLong_FromLongLong(ros_message->step);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "step", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
   {  // ids
     PyObject * field = NULL;
     field = PyObject_GetAttrString(_pymessage, "ids");
@@ -337,7 +317,7 @@ PyObject * tutorial_interfaces__srv__cv_img__response__convert_to_py(void * raw_
     assert(itemsize_attr != NULL);
     size_t itemsize = PyLong_AsSize_t(itemsize_attr);
     Py_DECREF(itemsize_attr);
-    if (itemsize != sizeof(float)) {
+    if (itemsize != sizeof(int64_t)) {
       PyErr_SetString(PyExc_RuntimeError, "itemsize doesn't match expectation");
       Py_DECREF(field);
       return NULL;
@@ -366,8 +346,8 @@ PyObject * tutorial_interfaces__srv__cv_img__response__convert_to_py(void * raw_
       // populating the array.array using the frombytes method
       PyObject * frombytes = PyObject_GetAttrString(field, "frombytes");
       assert(frombytes != NULL);
-      float * src = &(ros_message->ids.data[0]);
-      PyObject * data = PyBytes_FromStringAndSize((const char *)src, ros_message->ids.size * sizeof(float));
+      int64_t * src = &(ros_message->ids.data[0]);
+      PyObject * data = PyBytes_FromStringAndSize((const char *)src, ros_message->ids.size * sizeof(int64_t));
       assert(data != NULL);
       PyObject * ret = PyObject_CallFunctionObjArgs(frombytes, data, NULL);
       Py_DECREF(data);

@@ -120,13 +120,6 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: step
-  {
-    out << "step: ";
-    rosidl_generator_traits::value_to_yaml(msg.step, out);
-    out << ", ";
-  }
-
   // member: ids
   {
     if (msg.ids.size() == 0) {
@@ -168,16 +161,6 @@ inline void to_block_style_yaml(
   const CVImg_Response & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: step
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "step: ";
-    rosidl_generator_traits::value_to_yaml(msg.step, out);
-    out << "\n";
-  }
-
   // member: ids
   {
     if (indentation > 0) {

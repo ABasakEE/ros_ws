@@ -36,7 +36,6 @@ class MinimalService(Node):
         #print(corners.dtype,ids.dtype)
         
         #print(ids,'\nids\n',corners,'\ncorners')
-        step=0
         detectedCorners=list()
         detectedIDs=list()
         try:
@@ -44,17 +43,15 @@ class MinimalService(Node):
                 c=np.ndarray.flatten(corner).tolist()
                 detectedCorners.extend(c)
             detectedIDs=np.ndarray.flatten(ids).tolist()
-            step=len(detectedIDs)
         except:
             print('No arucos detected in front of me')
 
         
-        response.step = step #finding how many unique ids have been identified
         if (len(detectedCorners)>0):#corners detected
             for corner in detectedCorners:
                 response.corners.append(corner)
         if (len(detectedIDs)>0): #ids detected
-            for id in ids:
+            for id in detectedIDs:
                 response.ids.append(id)
         
         

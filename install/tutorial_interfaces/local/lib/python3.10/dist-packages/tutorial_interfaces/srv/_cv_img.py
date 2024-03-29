@@ -190,20 +190,17 @@ class CVImg_Response(metaclass=Metaclass_CVImg_Response):
     """Message class 'CVImg_Response'."""
 
     __slots__ = [
-        '_step',
         '_ids',
         '_corners',
     ]
 
     _fields_and_field_types = {
-        'step': 'int64',
-        'ids': 'sequence<float>',
+        'ids': 'sequence<int64>',
         'corners': 'sequence<float>',
     }
 
     SLOT_TYPES = (
-        rosidl_parser.definition.BasicType('int64'),  # noqa: E501
-        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('float')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('int64')),  # noqa: E501
         rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('float')),  # noqa: E501
     )
 
@@ -211,8 +208,7 @@ class CVImg_Response(metaclass=Metaclass_CVImg_Response):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.step = kwargs.get('step', int())
-        self.ids = array.array('f', kwargs.get('ids', []))
+        self.ids = array.array('q', kwargs.get('ids', []))
         self.corners = array.array('f', kwargs.get('corners', []))
 
     def __repr__(self):
@@ -244,8 +240,6 @@ class CVImg_Response(metaclass=Metaclass_CVImg_Response):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        if self.step != other.step:
-            return False
         if self.ids != other.ids:
             return False
         if self.corners != other.corners:
@@ -258,21 +252,6 @@ class CVImg_Response(metaclass=Metaclass_CVImg_Response):
         return copy(cls._fields_and_field_types)
 
     @builtins.property
-    def step(self):
-        """Message field 'step'."""
-        return self._step
-
-    @step.setter
-    def step(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'step' field must be of type 'int'"
-            assert value >= -9223372036854775808 and value < 9223372036854775808, \
-                "The 'step' field must be an integer in [-9223372036854775808, 9223372036854775807]"
-        self._step = value
-
-    @builtins.property
     def ids(self):
         """Message field 'ids'."""
         return self._ids
@@ -280,8 +259,8 @@ class CVImg_Response(metaclass=Metaclass_CVImg_Response):
     @ids.setter
     def ids(self, value):
         if isinstance(value, array.array):
-            assert value.typecode == 'f', \
-                "The 'ids' array.array() must have the type code of 'f'"
+            assert value.typecode == 'q', \
+                "The 'ids' array.array() must have the type code of 'q'"
             self._ids = value
             return
         if __debug__:
@@ -295,10 +274,10 @@ class CVImg_Response(metaclass=Metaclass_CVImg_Response):
                   isinstance(value, UserList)) and
                  not isinstance(value, str) and
                  not isinstance(value, UserString) and
-                 all(isinstance(v, float) for v in value) and
-                 all(not (val < -3.402823466e+38 or val > 3.402823466e+38) or math.isinf(val) for val in value)), \
-                "The 'ids' field must be a set or sequence and each value of type 'float' and each float in [-340282346600000016151267322115014000640.000000, 340282346600000016151267322115014000640.000000]"
-        self._ids = array.array('f', value)
+                 all(isinstance(v, int) for v in value) and
+                 all(val >= -9223372036854775808 and val < 9223372036854775808 for val in value)), \
+                "The 'ids' field must be a set or sequence and each value of type 'int' and each integer in [-9223372036854775808, 9223372036854775807]"
+        self._ids = array.array('q', value)
 
     @builtins.property
     def corners(self):

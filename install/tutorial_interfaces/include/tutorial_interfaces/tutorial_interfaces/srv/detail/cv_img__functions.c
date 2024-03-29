@@ -261,9 +261,8 @@ tutorial_interfaces__srv__CVImg_Response__init(tutorial_interfaces__srv__CVImg_R
   if (!msg) {
     return false;
   }
-  // step
   // ids
-  if (!rosidl_runtime_c__float__Sequence__init(&msg->ids, 0)) {
+  if (!rosidl_runtime_c__int64__Sequence__init(&msg->ids, 0)) {
     tutorial_interfaces__srv__CVImg_Response__fini(msg);
     return false;
   }
@@ -281,9 +280,8 @@ tutorial_interfaces__srv__CVImg_Response__fini(tutorial_interfaces__srv__CVImg_R
   if (!msg) {
     return;
   }
-  // step
   // ids
-  rosidl_runtime_c__float__Sequence__fini(&msg->ids);
+  rosidl_runtime_c__int64__Sequence__fini(&msg->ids);
   // corners
   rosidl_runtime_c__float__Sequence__fini(&msg->corners);
 }
@@ -294,12 +292,8 @@ tutorial_interfaces__srv__CVImg_Response__are_equal(const tutorial_interfaces__s
   if (!lhs || !rhs) {
     return false;
   }
-  // step
-  if (lhs->step != rhs->step) {
-    return false;
-  }
   // ids
-  if (!rosidl_runtime_c__float__Sequence__are_equal(
+  if (!rosidl_runtime_c__int64__Sequence__are_equal(
       &(lhs->ids), &(rhs->ids)))
   {
     return false;
@@ -321,10 +315,8 @@ tutorial_interfaces__srv__CVImg_Response__copy(
   if (!input || !output) {
     return false;
   }
-  // step
-  output->step = input->step;
   // ids
-  if (!rosidl_runtime_c__float__Sequence__copy(
+  if (!rosidl_runtime_c__int64__Sequence__copy(
       &(input->ids), &(output->ids)))
   {
     return false;
